@@ -1,5 +1,0 @@
-Get a PCB board
-Place the resistors
-Set the input voltage at 20V
-Measure the voltages across the resistors
-Measure the current through the resistors
