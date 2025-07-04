@@ -4,7 +4,7 @@ Pre-Installation Requirements
 - Python 3.6 or higher
 - PyQt6
 
-"Not Final, edit"
+"Not Final, edit (Sample or Guidelines)"
 Pre-requisite: (Specifically Linux)
 - Install flet.dev
 - Install pymongo
@@ -25,6 +25,7 @@ Instruction:
 - sudo apt install libmpv-dev mpv
 - run python main.py
 
-Information: (users.txt)
-username
-password
+Information: 
+(users.txt)
+- username
+- password
