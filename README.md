@@ -4,7 +4,7 @@ Pre-Installation Requirements
 - Python 3.6 or higher
 - PyQt6
 
-- "Not Final, edit"
+"Not Final, edit"
 Pre-requisite: (Specifically Linux)
 - Install flet.dev
 - Install pymongo
