@@ -8,20 +8,17 @@ class LoginDialog(QDialog):
 
         self.submitLoginButton.clicked.connect(self.checkLogin)
 
-        self.mock_users = {
-            "donor@example.com": {"password": "donor123", "name": "Donor Dan"},
-            "recipient@example.com": {"password": "recipient123", "name": "Recip Rica"}
-        }
+        self.mock_user_email = "donor@example.com"
+        self.mock_user_password = "donor123"
+        self.mock_user_name = "Donor"
 
     def checkLogin(self):
-        email = self.emailLineEdit.text()
-        password = self.passwordLineEdit.text()
+        email = self.emailLineEdit.text().strip()  
+        password = self.passwordLineEdit.text().strip()
 
-        user = self.mock_users.get(email)
-
-        if user and user["password"] == password:
-            QMessageBox.information(self, "Login Successful", f"Welcome, {user['name']}!")
-            self.accept()
+        if email == self.mock_user_email and password == self.mock_user_password:
+            QMessageBox.information(self, "Login Successful", f"Welcome, {self.mock_user_name}!")
+            self.accept()  
         else:
             QMessageBox.critical(self, "Login Failed", "Invalid email or password.")
 
