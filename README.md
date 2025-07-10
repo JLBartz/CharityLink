@@ -10,4 +10,4 @@ Pre-Installation Requirements
 Instructions:
 - You can open your visual studio or visual studio code then the terminal for the platform and just copy&paste this command "pip3 install pyqt6" without the quotation marks.
 - To update python, just run this on the terminal with the command of "python.exe -m pip install --upgrade pip" without the quotation marks if you python is not up to date.
-- Lastly, browse and add "qt visual studio tools" on the extention manager.
+- Lastly, browse and add "qt visual studio tools" on the extention manager then restart the application before running the main.py to view the program.
