@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashboardWindow</class>
+ <widget class="QDialog" name="DashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CharityLink Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="welcomeLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>30</y>
+     <width>900</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+     <pointsize>24</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Welcome, [User]!</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addDonationButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>120</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>Add New Donation</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewDonationsButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>200</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>View My Donations</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="trackDeliveryButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>280</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>Track Delivery</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="makeRequestButton">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>120</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>Make a New Request</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewRequestsButton">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>200</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>View My Requests</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewMatchesButton">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>280</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+font: 700 18pt &quot;Open Sans&quot;;
+background-color: red;</string>
+   </property>
+   <property name="text">
+    <string>View Matches</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
