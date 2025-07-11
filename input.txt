@@ -1,0 +1,4 @@
+For logging in the program, input the following:
+
+Email: donor@example.com
+Password: donor123

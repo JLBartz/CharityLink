@@ -16,6 +16,9 @@
   <property name="windowTitle">
    <string>CharityLink</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -31,6 +34,10 @@
      <pointsize>72</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>CharityLink</string>
@@ -52,6 +59,7 @@
     <string notr="true">border-radius: 30px;
 font: 700 18pt &quot;Open Sans&quot;;
 background-color: red;
+color: rgb(0, 0, 0);
 </string>
    </property>
    <property name="text">
@@ -74,6 +82,7 @@ background-color: red;
     <string notr="true">border-radius: 30px;
 font: 700 16pt &quot;Open Sans&quot;;
 background-color: red;
+color: rgb(0, 0, 0);
 </string>
    </property>
    <property name="text">

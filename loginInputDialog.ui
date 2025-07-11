@@ -26,7 +26,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Normal</enum>
    </property>
    <property name="placeholderText">
     <string>Email</string>
@@ -42,10 +46,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Normal</enum>
+    <enum>QLineEdit::Password</enum>
    </property>
    <property name="placeholderText">
     <string>Password</string>
