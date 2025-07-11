@@ -2,6 +2,8 @@ from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
 from dashboardWindow import DashboardWindow
 
+from registerWindow import RegisterWindow
+
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -13,7 +15,7 @@ class LoginDialog(QDialog):
         self.mock_user_password = "donor123"
         self.mock_user_name = "Donor"
 
-        self.login_success = False  # <-- flag to indicate login result
+        self.login_success = False 
 
     def checkLogin(self):
         email = self.emailLineEdit.text().strip()  
@@ -34,6 +36,8 @@ class LoginWindow(QDialog):
 
         self.loginPushButton.clicked.connect(self.openLoginDialog)
 
+        self.registerPushButton.clicked.connect(self.openRegisterDialog)
+
     def openLoginDialog(self):
         dialog = LoginDialog(self)
         result = dialog.exec()
@@ -42,3 +46,7 @@ class LoginWindow(QDialog):
             self.dashboard = DashboardWindow()
             self.dashboard.show()
             self.close()
+
+    def openRegisterDialog(self):
+        dialog = RegisterWindow(self)
+        dialog.exec()
