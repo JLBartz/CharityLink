@@ -6,7 +6,7 @@ CharityLink
 Pre-Installation Requirements
 - Python 3.6 or higher
 - PyQt6
-
+  
 Instructions:
 - You can open your visual studio code then the terminal for the platform and copy&paste this command "pip3 install pyqt6" without the quotation marks.
 - Run on the terminal "pip install pyqt6-tools", this is optional for designer tools.
@@ -15,3 +15,9 @@ Instructions:
 
 Note:
 For logging into the program, the mock details are found in inputs.txt
+
+
+Team Members:
+James Uy - Database and UI
+James Barte - UI and Logics
+Ivan Artocilla - UI 
