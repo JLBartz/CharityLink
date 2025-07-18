@@ -87,6 +87,7 @@ Restart VS Code before running the app
 
 </details>
 
+
 🐧 How to Run This Program on Ubuntu 22.04 (Jammy Jellyfish)
 📦 Pre-Installation Requirements
 ✅ Python 3.6+ (Ubuntu 22.04 ships with Python 3.10+)
@@ -136,6 +137,7 @@ Or install all dependencies at once (requirements.txt):
 📌 Tip: You can drag the folder from File Manager directly into Terminal to get the full path.
 
 5️⃣ Confirm main.py Exists
+
 `ls`
 
 You should see:
@@ -149,7 +151,9 @@ You should see:
 ✅ Your PyQt6 app should now open.
 
 🧪 Test Login
+
 Email: donor@example.com
+
 Password: donor123
 
 
