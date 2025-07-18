@@ -74,8 +74,6 @@ python -m pip install --upgrade pip
 
 </details> <details> <summary>💡 Using Visual Studio Code?</summary>
 
-</details> <details> <summary>💡 Using Visual Studio Code?</summary>
-
 Install the "Python" extension
 
 (Optional) Install "Qt for Visual Studio Tools"
