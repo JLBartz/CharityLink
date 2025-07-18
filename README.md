@@ -30,6 +30,7 @@ pip install pyqt6
 pip install pyqt6-tools  # optional
 
 🧭 How to Run the Project
+
 ✅ Step 1: Confirm Python is Installed
 bash
 Copy code
@@ -58,22 +59,35 @@ Password: donor123
 
 🧰 Developer Tools (Optional)
 <details> <summary>💡 Want to use Qt Designer?</summary>
+
 Install the GUI designer tool with:
+
 pip install pyqt6-tools
+
 Then run it from your terminal:
+
 pyqt6-tools designer
 
 </details> <details> <summary>💡 Updating pip or Python?</summary>
+
 python -m pip install --upgrade pip
+
 </details> <details> <summary>💡 Using Visual Studio Code?</summary>
 
 </details> <details> <summary>💡 Using Visual Studio Code?</summary>
+
 Install the "Python" extension
+
 (Optional) Install "Qt for Visual Studio Tools"
+
 Restart VS Code before running the app
+
 </details>
 
-Team Members:
-James Uy - Database and UI
-James Barte - UI and Logics
-Ivan Artocilla - UI 
+👥 Team Members
+| Name               | Role          |
+| ------------------ | ------------- |
+| **James Uy**       | Database & UI |
+| **James Barte**    | UI & Logic    |
+| **Ivan Artocilla** | UI Design     |
+
