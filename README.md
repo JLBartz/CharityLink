@@ -1,4 +1,4 @@
-# 🌟 CharityLink
+# CharityLink 🖇️
 *A desktop application project for CPE106L-4-E03 Group 2*
 
 CharityLink is a PyQt6-based application simulating a donor login system with a user-friendly interface. It includes a mock login system and dashboard, suitable for beginner-level learning in Python GUI development.
@@ -86,6 +86,72 @@ Install the "Python" extension
 Restart VS Code before running the app
 
 </details>
+
+🐧 How to Run This Program on Ubuntu 22.04 (Jammy Jellyfish)
+📦 Pre-Installation Requirements
+✅ Python 3.6+ (Ubuntu 22.04 ships with Python 3.10+)
+
+✅ pip (Python package manager)
+
+✅ PyQt6 for the GUI
+
+(Optional) pyqt6-tools for Qt Designer
+
+🛠 Step-by-Step Instructions
+1️⃣ Open Terminal
+
+Press Ctrl + Alt + T or search "Terminal" from the application menu.
+
+2️⃣ Check Python Installation
+
+`python3 --version`
+
+Expected output:
+`Python 3.10.x`
+
+If not installed, run:
+
+<pre><code>
+```sudo apt update
+sudo apt install python3 python3-pip -y```
+</code</pre>
+
+3️⃣ Install Dependencies
+
+`pip3 install PyQt6`
+
+(Optional, for Qt Designer and tools)
+
+
+`pip3 install pyqt6-tools`
+
+Or install all dependencies at once (requirements.txt):
+
+`pip3 install -r requirements.txt`
+
+4️⃣ Navigate to the Project Directory
+
+`cd ~/Downloads/CharityLink`
+
+📌 Tip: You can drag the folder from File Manager directly into Terminal to get the full path.
+
+5️⃣ Confirm main.py Exists
+`ls`
+
+You should see:
+
+`main.py`
+
+6️⃣ Run the Program
+
+`python3 main.py`
+
+✅ Your PyQt6 app should now open.
+
+🧪 Test Login
+Email: donor@example.com
+Password: donor123
+
 
 👥 Team Members
 | Name               | Role          |
