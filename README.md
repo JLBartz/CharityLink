@@ -29,7 +29,7 @@ or individually:
 
 `pip install pyqt6`
 
-`pip install pyqt6-tools #optional`
+`pip install pyqt6-tools` (optional)
 
 🧭 How to Run the Project
 
