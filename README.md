@@ -59,26 +59,18 @@ Password: donor123
 🧰 Developer Tools (Optional)
 <details> <summary>💡 Want to use Qt Designer?</summary>
 Install the GUI designer tool with:
-
-bash
-Copy code
 pip install pyqt6-tools
 Then run it from your terminal:
-
-bash
-Copy code
 pyqt6-tools designer
+
 </details> <details> <summary>💡 Updating pip or Python?</summary>
-bash
-Copy code
 python -m pip install --upgrade pip
 </details> <details> <summary>💡 Using Visual Studio Code?</summary>
+
+</details> <details> <summary>💡 Using Visual Studio Code?</summary>
 Install the "Python" extension
-
 (Optional) Install "Qt for Visual Studio Tools"
-
 Restart VS Code before running the app
-
 </details>
 
 Team Members:
