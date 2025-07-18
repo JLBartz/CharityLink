@@ -30,6 +30,7 @@ pip install pyqt6
 pip install pyqt6-tools  # optional
 
 🧭 How to Run the Project
+Windows 🪟
 
 ✅ Step 1: Confirm Python is Installed
 bash
