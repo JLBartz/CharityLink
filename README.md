@@ -23,31 +23,35 @@ CharityLink is a PyQt6-based application simulating a donor login system with a 
 
 Install dependencies with:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 or individually:
-pip install pyqt6
-pip install pyqt6-tools  # optional
+
+`pip install pyqt6`
+
+`pip install pyqt6-tools #optional`
 
 🧭 How to Run the Project
-Windows 🪟
+
+<h3>Windows 🪟</h3>
 
 ✅ Step 1: Confirm Python is Installed
-bash
-Copy code
-python --version
+
+`python --version`
+
+
 If not installed, download it here https://www.python.org/downloads/ and ensure you check ✅ "Add Python to PATH".
 
 ✅ Step 2: Navigate to the Project Folder
-bash
-Copy code
-cd C:\Users\YourName\Downloads\CharityLink
+
+`cd C:\Users\YourName\Downloads\CharityLink`
+
 💡 Tip: Open File Explorer, navigate to the folder, click the address bar, copy the path, and paste it into Command Prompt.
 
 ✅ Step 3: Run the Program
-bash
-Copy code
-python main.py
+
+`python main.py`
+
 You should see the login window appear!
 
 🔐 Mock Login Details
@@ -63,15 +67,15 @@ Password: donor123
 
 Install the GUI designer tool with:
 
-pip install pyqt6-tools
+`pip install pyqt6-tools`
 
 Then run it from your terminal:
 
-pyqt6-tools designer
+`pyqt6-tools designer`
 
 </details> <details> <summary>💡 Updating pip or Python?</summary>
 
-python -m pip install --upgrade pip
+`python -m pip install --upgrade pip`
 
 </details> <details> <summary>💡 Using Visual Studio Code?</summary>
 
