@@ -14,6 +14,7 @@ class LoginDialog(QDialog):
         self.mock_user_email = "donor@example.com"
         self.mock_user_password = "donor123"
         self.mock_user_name = "Donor"
+        self.mock_user_id = 1  # ✅ Add this line here
 
         self.login_success = False 
 
@@ -24,7 +25,8 @@ class LoginDialog(QDialog):
         if email == self.mock_user_email and password == self.mock_user_password:
             QMessageBox.information(self, "Login Successful", f"Welcome, {self.mock_user_name}!")
 
-            self.login_success = True  
+            self.login_success = True
+            self.logged_in_user_id = self.mock_user_id  # ✅ This now works
             self.accept()              
         else:
             QMessageBox.critical(self, "Login Failed", "Invalid email or password.")
@@ -33,6 +35,7 @@ class LoginWindow(QDialog):
     def __init__(self):
         super().__init__()
         loadUi("loginWindow.ui", self)
+        self.mock_user_id = 1
 
         self.loginPushButton.clicked.connect(self.openLoginDialog)
 
@@ -43,9 +46,11 @@ class LoginWindow(QDialog):
         result = dialog.exec()
 
         if dialog.login_success:
-            self.dashboard = DashboardWindow()
+            user_id = dialog.logged_in_user_id
+            self.dashboard = DashboardWindow(user_id)
             self.dashboard.show()
             self.close()
+
 
     def openRegisterDialog(self):
         dialog = RegisterWindow(self)
