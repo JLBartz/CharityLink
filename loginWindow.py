@@ -1,7 +1,7 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
 from dashboardWindow import DashboardWindow
-from adminDashboardWindow import AdminDashboardWindow
+from admin.adminDashboardWindow import AdminDashboardWindow
 from registerWindow import RegisterWindow
 
 class LoginDialog(QDialog):
