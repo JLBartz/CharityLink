@@ -6,8 +6,8 @@ class AddDonationWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
         loadUi("addDonationWindow.ui", self)
-        self.user_id = user_id  # 🟢 Save user_id
 
+        self.user_id = user_id  # Pass logged-in user's ID
         self.submitButton.clicked.connect(self.submitDonation)
 
     def submitDonation(self):
@@ -17,8 +17,9 @@ class AddDonationWindow(QDialog):
         quantity = self.quantitySpinBox.value()
         location = self.locationLineEdit.text().strip()
 
-        if not name or not description or not location:
-            QMessageBox.warning(self, "Input Error", "Please fill in all fields.")
+        # Basic validation
+        if not name or not category or quantity <= 0 or not location:
+            QMessageBox.warning(self, "Input Error", "Please fill in all required fields.")
             return
 
         try:
@@ -26,15 +27,16 @@ class AddDonationWindow(QDialog):
             cursor = conn.cursor()
 
             cursor.execute("""
-                INSERT INTO donations (name, description, category, quantity, location, user_id)
+                INSERT INTO donation_items 
+                (donor_id, name, category, description, quantity, location)
                 VALUES (?, ?, ?, ?, ?, ?)
-            """, (name, description, category, quantity, location, self.user_id))
+            """, (self.user_id, name, category, description, quantity, location))
 
             conn.commit()
             conn.close()
 
-            QMessageBox.information(self, "Success", "Donation successfully added!")
-            self.accept()
+            QMessageBox.information(self, "Success", "Donation successfully added.")
+            self.accept()  # Close the dialog
 
         except Exception as e:
             QMessageBox.critical(self, "Database Error", f"Error: {e}")
