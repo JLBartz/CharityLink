@@ -1,4 +1,9 @@
 For logging in the program, input the following:
 
+User
 Email: donor@example.com
 Password: donor123
+
+Admin
+Email: charitylink@example.com
+Password: charitylink123
