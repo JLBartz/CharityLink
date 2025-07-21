@@ -28,4 +28,3 @@ class AdminDashboardWindow(QDialog):
     def view_audit_logs(self):
         # TODO: Implement audit log viewing logic
         pass
-
