@@ -71,4 +71,3 @@ class LoginWindow(QDialog):
     def openRegisterDialog(self):
         dialog = RegisterWindow(self)
         dialog.exec()
-
