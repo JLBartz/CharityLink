@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminDashboardWindow</class>
+ <widget class="QDialog" name="AdminDashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 245, 245);</string>
+  </property>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>600</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Admin Dashboard</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewUsersButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Users</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewDonationsButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>150</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Donations</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewRequestsButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>200</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Requests</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewAuditLogsButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>250</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Audit Logs</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="logoutButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>320</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Logout</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
