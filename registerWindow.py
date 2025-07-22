@@ -1,5 +1,6 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
+import db  # <-- Make sure db.py is in your project folder
 
 class RegisterWindow(QDialog):
     def __init__(self, parent=None):
@@ -22,7 +23,14 @@ class RegisterWindow(QDialog):
             QMessageBox.warning(self, "Password Error", "Passwords do not match.")
             return
 
-        # Here, you would typically add user to DB or file (mock for now)
-        # --- MOCK ONLY ---
-        QMessageBox.information(self, "Registration Successful", f"Account registered for {name}!")
-        self.accept()
+        # Check if user already exists
+        if db.get_user_by_email(email):
+            QMessageBox.warning(self, "Registration Error", "Email already registered.")
+            return
+
+        try:
+            db.create_user(email, password, name, role="User")
+            QMessageBox.information(self, "Registration Successful", f"Account registered for {name}!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Database Error", f"Error registering user: {e}")
