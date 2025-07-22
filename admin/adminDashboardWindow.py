@@ -1,30 +1,49 @@
 from PyQt6.QtWidgets import QDialog
 from PyQt6.uic import loadUi
 
+from auditLogWindow import AuditLogWindow
+from viewAllUsersWindow import ViewAllUsersWindow
+from viewAllDonationsWindow import ViewAllDonationsWindow
+from viewAllRequestsWindow import ViewAllRequestsWindow
+from reverseWindow import ReverseWindow
+from updateDeliveryWindow import UpdateDeliveryWindow
+
 class AdminDashboardWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("adminDashboardWindow.ui", self)
 
-        # Connect buttons to stubs (fill in later)
-        self.viewUsersButton.clicked.connect(self.view_users)
-        self.viewDonationsButton.clicked.connect(self.view_donations)
-        self.viewRequestsButton.clicked.connect(self.view_requests)
-        self.viewAuditLogsButton.clicked.connect(self.view_audit_logs)
-        self.logoutButton.clicked.connect(self.accept)
+        self.viewUsersButton.clicked.connect(self.openViewUsers)
+        self.viewDonationsButton.clicked.connect(self.openViewDonations)
+        self.viewRequestsButton.clicked.connect(self.openViewRequests)
+        self.viewAuditLogsButton.clicked.connect(self.openAuditLogs)
+        self.reverseButton.clicked.connect(self.openReverse)
+        self.updateDeliveryButton.clicked.connect(self.openUpdateDelivery)
+        self.logoutButton.clicked.connect(self.logout)
 
-    def view_users(self):
-        # TODO: Implement user viewing logic
-        pass
+    def openViewUsers(self):
+        dialog = ViewAllUsersWindow(self)
+        dialog.exec()
 
-    def view_donations(self):
-        # TODO: Implement donation viewing logic
-        pass
+    def openViewDonations(self):
+        dialog = ViewAllDonationsWindow(self)
+        dialog.exec()
 
-    def view_requests(self):
-        # TODO: Implement request viewing logic
-        pass
+    def openViewRequests(self):
+        dialog = ViewAllRequestsWindow(self)
+        dialog.exec()
 
-    def view_audit_logs(self):
-        # TODO: Implement audit log viewing logic
-        pass
+    def openAuditLogs(self):
+        dialog = AuditLogWindow(self)
+        dialog.exec()
+
+    def openReverse(self):
+        dialog = ReverseWindow(self)
+        dialog.exec()
+
+    def openUpdateDelivery(self):
+        dialog = UpdateDeliveryWindow(self)
+        dialog.exec()
+
+    def logout(self):
+        self.accept()
