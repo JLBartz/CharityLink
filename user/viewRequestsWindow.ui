@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ViewRequestsWindow</class>
+ <widget class="QDialog" name="ViewRequestsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Available Requests</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>840</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+     <pointsize>24</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0,0,0);</string>
+   </property>
+   <property name="text">
+    <string>Available Requests</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="requestsTable">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>840</width>
+     <height>350</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      font: 700 14pt "Open Sans";
+      color: rgb(0, 0, 0);
+      background-color: rgb(255,255,255);
+      border-radius: 15px;
+    </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="matchButton">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>470</y>
+     <width>170</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      border-radius: 25px;
+      font: 700 18pt "Open Sans";
+      background-color: red;
+      color: rgb(255, 255, 255);
+    </string>
+   </property>
+   <property name="text">
+    <string>Match Selected</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>470</y>
+     <width>140</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      border-radius: 25px;
+      font: 700 16pt "Open Sans";
+      background-color: rgb(93,63,211);
+      color: rgb(255, 255, 255);
+    </string>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
