@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ViewDonationsWindow</class>
+ <widget class="QDialog" name="ViewDonationsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>My Donations</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>740</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+     <pointsize>24</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0,0,0);</string>
+   </property>
+   <property name="text">
+    <string>My Donations</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="donationsTable">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>740</width>
+     <height>340</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      border-radius: 8px;
+      background-color: rgb(250,250,250);
+      font: 12pt "Open Sans";
+    </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>445</y>
+     <width>100</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      border-radius: 15px;
+      font: 700 14pt "Open Sans";
+      background-color: red;
+      color: rgb(255,255,255);
+    </string>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
