@@ -25,11 +25,13 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: black;
+background-color: white;
+</string>
+   </property>
    <property name="placeholderText">
     <string>Full Name</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="emailLineEdit">
@@ -41,11 +43,12 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: black;
+background-color: white;</string>
+   </property>
    <property name="placeholderText">
     <string>Email</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="passwordLineEdit">
@@ -57,14 +60,15 @@
      <height>30</height>
     </rect>
    </property>
-   <property name="placeholderText">
-    <string>Password</string>
+   <property name="styleSheet">
+    <string notr="true">color: black;
+background-color: white;</string>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
+    <enum>QLineEdit::EchoMode::Password</enum>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
+   <property name="placeholderText">
+    <string>Password</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="confirmPasswordLineEdit">
@@ -76,14 +80,15 @@
      <height>30</height>
     </rect>
    </property>
-   <property name="placeholderText">
-    <string>Confirm Password</string>
+   <property name="styleSheet">
+    <string notr="true">color: black;
+background-color: white;</string>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
+    <enum>QLineEdit::EchoMode::Password</enum>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
+   <property name="placeholderText">
+    <string>Confirm Password</string>
    </property>
   </widget>
   <widget class="QPushButton" name="registerButton">
@@ -95,11 +100,11 @@
      <height>40</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 15px; font: 700 12pt &quot;Open Sans&quot;; background-color: red;</string>
+   </property>
    <property name="text">
     <string>Register</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 15px; font: 700 12pt "Open Sans"; background-color: red;</string>
    </property>
   </widget>
  </widget>

@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QDialog, QMessageBox
 from user.dashboardWindow import DashboardWindow
 from admin.adminDashboardWindow import AdminDashboardWindow
 from user.registerWindow import RegisterWindow
+from db import validate_login
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
@@ -31,20 +32,35 @@ class LoginDialog(QDialog):
         email = self.emailLineEdit.text().strip()
         password = self.passwordLineEdit.text().strip()
 
+    #Mock Donor Login
         if email == self.mock_user_email and password == self.mock_user_password:
             QMessageBox.information(self, "Login Successful", f"Welcome, {self.mock_user_name}!")
             self.login_success = True
             self.is_admin = False
             self.logged_in_user_id = self.mock_user_id
             self.accept()
-        elif email == self.admin_email and password == self.admin_password:
+            return
+
+    #Mock Admin Login
+        if email == self.admin_email and password == self.admin_password:
             QMessageBox.information(self, "Login Successful", "Welcome, Admin!")
             self.login_success = True
             self.is_admin = True
             self.logged_in_user_id = self.admin_id
             self.accept()
+            return
+
+    #Database Login
+        user = validate_login(email, password)
+        if user:
+            QMessageBox.information(self, "Login Successful", f"Welcome, {user['name']}!")
+            self.login_success = True
+            self.is_admin = (user["role"].lower() == "admin")
+            self.logged_in_user_id = user["id"]
+            self.accept()
         else:
             QMessageBox.critical(self, "Login Failed", "Invalid email or password.")
+            
 
 class LoginWindow(QDialog):
     def __init__(self):
