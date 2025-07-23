@@ -1,22 +1,27 @@
 from PyQt6.QtWidgets import QDialog
 from PyQt6.uic import loadUi
+
+from admin.viewAllUsersWindow import ViewAllUsersWindow
 '''
 from auditLogWindow import AuditLogWindow
-from viewAllUsersWindow import ViewAllUsersWindow
 from viewAllDonationsWindow import ViewAllDonationsWindow
 from reverseWindow import ReverseWindow
 from viewAllRequestsWindow import ViewAllRequestsWindow
 from updateDeliveryWindow import UpdateDeliveryWindow
 '''
 
-
-
 class AdminDashboardWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        loadUi("adminDashboardWindow.ui", self)
+        loadUi("admin/adminDashboardWindow.ui", self)
 
         self.viewUsersButton.clicked.connect(self.openViewUsers)
+
+    def openViewUsers(self):
+            dialog = ViewAllUsersWindow(self)
+            dialog.exec()
+
+'''
         self.viewDonationsButton.clicked.connect(self.openViewDonations)
         self.viewRequestsButton.clicked.connect(self.openViewRequests)
         self.viewAuditLogsButton.clicked.connect(self.openAuditLogs)
@@ -24,7 +29,6 @@ class AdminDashboardWindow(QDialog):
         self.updateDeliveryButton.clicked.connect(self.openUpdateDelivery)
         self.logoutButton.clicked.connect(self.logout)
 
-'''
     def openViewRequests(self):
         dialog = ViewAllRequestsWindow(self)
         dialog.exec()
@@ -35,10 +39,6 @@ class AdminDashboardWindow(QDialog):
 
     def logout(self):
         self.accept()
-
-    def openViewUsers(self):
-        dialog = ViewAllUsersWindow(self)
-        dialog.exec()
 
     def openViewDonations(self):
         dialog = ViewAllDonationsWindow(self)
