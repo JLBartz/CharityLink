@@ -12,18 +12,7 @@ class LoginDialog(QDialog):
 
         self.submitLoginButton.clicked.connect(self.checkLogin)
 
-        # Mock donor account
-        self.mock_user_email = "donor@example.com"
-        self.mock_user_password = "donor123"
-        self.mock_user_name = "Donor"
-        self.mock_user_id = 1
-
-        # Mock admin account
-        self.admin_email = "charitylink@example.com"
-        self.admin_password = "charitylink123"
-        self.admin_name = "Admin"
-        self.admin_id = 999  # Any unique number
-
+        # Default values to prevent crash when user closes dialog
         self.login_success = False
         self.is_admin = False
         self.logged_in_user_id = None
@@ -31,24 +20,6 @@ class LoginDialog(QDialog):
     def checkLogin(self):
         email = self.emailLineEdit.text().strip()
         password = self.passwordLineEdit.text().strip()
-
-    #Mock Donor Login
-        if email == self.mock_user_email and password == self.mock_user_password:
-            QMessageBox.information(self, "Login Successful", f"Welcome, {self.mock_user_name}!")
-            self.login_success = True
-            self.is_admin = False
-            self.logged_in_user_id = self.mock_user_id
-            self.accept()
-            return
-
-    #Mock Admin Login
-        if email == self.admin_email and password == self.admin_password:
-            QMessageBox.information(self, "Login Successful", "Welcome, Admin!")
-            self.login_success = True
-            self.is_admin = True
-            self.logged_in_user_id = self.admin_id
-            self.accept()
-            return
 
     #Database Login
         user = validate_login(email, password)
@@ -83,6 +54,8 @@ class LoginWindow(QDialog):
                 self.dashboard = DashboardWindow(user_id)
                 self.dashboard.show()
             self.close()
+        else:
+            print("Login cancelled or failed.")
 
     def openRegisterDialog(self):
         dialog = RegisterWindow(self)
