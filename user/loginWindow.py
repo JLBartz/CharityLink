@@ -1,13 +1,13 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
-from dashboardWindow import DashboardWindow
+from user.dashboardWindow import DashboardWindow
 from admin.adminDashboardWindow import AdminDashboardWindow
-from registerWindow import RegisterWindow
+from user.registerWindow import RegisterWindow
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        loadUi("loginInputDialog.ui", self)
+        loadUi("user/loginInputDialog.ui", self)
 
         self.submitLoginButton.clicked.connect(self.checkLogin)
 
@@ -49,7 +49,7 @@ class LoginDialog(QDialog):
 class LoginWindow(QDialog):
     def __init__(self):
         super().__init__()
-        loadUi("loginWindow.ui", self)
+        loadUi("user/loginWindow.ui", self)
 
         self.loginPushButton.clicked.connect(self.openLoginDialog)
         self.registerPushButton.clicked.connect(self.openRegisterDialog)

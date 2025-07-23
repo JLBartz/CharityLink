@@ -5,7 +5,7 @@ import sqlite3
 class AddDonationWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
-        loadUi("addDonationWindow.ui", self)
+        loadUi("user/addDonationWindow.ui", self)
 
         self.user_id = user_id  # Pass logged-in user's ID
         self.submitButton.clicked.connect(self.submitDonation)

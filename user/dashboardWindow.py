@@ -1,7 +1,7 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog
 
-from addDonationWindow import AddDonationWindow
+from user.addDonationWindow import AddDonationWindow
 from user.viewDonationsWindow import ViewDonationsWindow
 '''
 from user.trackDeliveryWindow import TrackDeliveryWindow
@@ -13,7 +13,7 @@ from user.viewMatchesWindow import ViewMatchesWindow
 class DashboardWindow(QDialog):
     def __init__(self, user_id=None, parent=None):
         super().__init__(parent)
-        loadUi("dashboardWindow.ui", self)
+        loadUi("user/dashboardWindow.ui", self)
         self.user_id = user_id
 
         self.addDonationButton.clicked.connect(self.openAddDonation)
