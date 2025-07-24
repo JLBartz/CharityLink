@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QDialog, QMessageBox
 from user.dashboardWindow import DashboardWindow
 from admin.adminDashboardWindow import AdminDashboardWindow
 from user.registerWindow import RegisterWindow
-from db import validate_login
+from db import validate_login, log_audit_action
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
@@ -21,13 +21,15 @@ class LoginDialog(QDialog):
         email = self.emailLineEdit.text().strip()
         password = self.passwordLineEdit.text().strip()
 
-    #Database Login
         user = validate_login(email, password)
         if user:
             QMessageBox.information(self, "Login Successful", f"Welcome, {user['name']}!")
             self.login_success = True
             self.is_admin = (user["role"].lower() == "admin")
             self.logged_in_user_id = user["id"]
+
+            log_audit_action(user["id"], "Login")  # Log the login event
+
             self.accept()
         else:
             QMessageBox.critical(self, "Login Failed", "Invalid email or password.")
@@ -48,14 +50,12 @@ class LoginWindow(QDialog):
         if dialog.login_success:
             user_id = dialog.logged_in_user_id
             if dialog.is_admin:
-                self.dashboard = AdminDashboardWindow()
-                self.dashboard.show()
+                self.dashboard = AdminDashboardWindow(login_window=self)
             else:
-                self.dashboard = DashboardWindow(user_id)
-                self.dashboard.show()
-            self.close()
-        else:
-            print("Login cancelled or failed.")
+                self.dashboard = DashboardWindow(user_id=user_id, login_window=self)
+            self.dashboard.show()
+            self.hide()
+
 
     def openRegisterDialog(self):
         dialog = RegisterWindow(self)

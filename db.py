@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import datetime
 
 DB_FILE = "CharityLink-Updated.db"
 
@@ -68,3 +69,14 @@ def get_user_by_id(user_id):
                 "role": row[3]
             }
         return None
+
+def log_audit_action(user_id, action, details=None):
+    conn = sqlite3.connect("CharityLink-Updated.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO audit_logs (user_id, action, details) VALUES (?, ?, ?)",
+        (user_id, action, details)
+    )
+    conn.commit()
+    conn.close()
+

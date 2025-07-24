@@ -9,12 +9,15 @@ from user.makeRequestWindow import MakeRequestWindow
 '''
 from user.viewRequestsWindow import ViewRequestsWindow
 from user.viewMatchesWindow import ViewMatchesWindow
+from db import log_audit_action
 
 class DashboardWindow(QDialog):
-    def __init__(self, user_id=None, parent=None):
-        super().__init__(parent)
+    def __init__(self, user_id=None, login_window=None):
+        super().__init__()
         loadUi("user/dashboardWindow.ui", self)
+
         self.user_id = user_id
+        self.login_window = login_window
 
         self.addDonationButton.clicked.connect(self.openAddDonation)
         self.viewDonationsButton.clicked.connect(self.openViewDonations)
@@ -39,7 +42,10 @@ class DashboardWindow(QDialog):
         dialog.exec()
 
     def logout(self):
-        self.accept()
+        if self.user_id:
+            log_audit_action(self.user_id, "Logout")
+        self.login_window.show()
+        self.close()
 
     def openViewDonations(self):
         dialog = ViewDonationsWindow(self.user_id, self)
