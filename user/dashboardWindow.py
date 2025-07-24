@@ -1,8 +1,8 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog
-
 from user.addDonationWindow import AddDonationWindow
 from user.viewDonationsWindow import ViewDonationsWindow
+from db import get_user_by_id
 '''
 from user.trackDeliveryWindow import TrackDeliveryWindow
 from user.makeRequestWindow import MakeRequestWindow
@@ -18,6 +18,11 @@ class DashboardWindow(QDialog):
 
         self.user_id = user_id
         self.login_window = login_window
+
+        if self.user_id:
+            user = get_user_by_id(self.user_id)
+            if user:
+                self.welcomeLabel.setText(f"Welcome, {user['name']}!")
 
         self.addDonationButton.clicked.connect(self.openAddDonation)
         self.viewDonationsButton.clicked.connect(self.openViewDonations)

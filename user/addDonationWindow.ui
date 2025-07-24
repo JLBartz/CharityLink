@@ -55,6 +55,9 @@ font: 700 18pt &quot;Open Sans&quot;;</string>
      <height>61</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 30px;
 font: 700 18pt &quot;Open Sans&quot;;
