@@ -1,13 +1,13 @@
 # CharityLink 🖇️
 *A desktop application project for CPE106L-4-E03 Group 2*
 
-CharityLink is a PyQt6-based application simulating a donor login system with a user-friendly interface. It includes a mock login system and dashboard, suitable for beginner-level learning in Python GUI development.
+CharityLink is a PyQt6-based application simulating a donor login system with a user-friendly interface. It includes a login system and dashboard, suitable for beginner-level learning in Python GUI development.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Mock login functionality
+- ✅ A fully working login functionality
 - ✅ GUI built with PyQt6 and Qt Designer
 - ✅ Clean UI for learning and prototyping
 - ✅ Easily extensible with a real database in the future
@@ -147,13 +147,6 @@ You should see:
 `python3 main.py`
 
 ✅ Your PyQt6 app should now open.
-
-🧪 Test Login
-
-Email: donor@example.com
-
-Password: donor123
-
 
 👥 Team Members
 | Name               | Role          |
