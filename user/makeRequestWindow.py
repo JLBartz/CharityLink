@@ -5,7 +5,7 @@ import sqlite3
 class MakeRequestWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
-        loadUi("makeRequestWindow.ui", self)
+        loadUi("user/makeRequestWindow.ui", self)
         self.user_id = user_id
 
         self.submitButton.clicked.connect(self.handleSubmit)

@@ -2,15 +2,14 @@ from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog
 from user.addDonationWindow import AddDonationWindow
 from user.viewDonationsWindow import ViewDonationsWindow
-from utils import apply_window_icon
-from db import get_user_by_id
-'''
-from user.trackDeliveryWindow import TrackDeliveryWindow
-from user.makeRequestWindow import MakeRequestWindow
-'''
 from user.viewRequestsWindow import ViewRequestsWindow
 from user.viewMatchesWindow import ViewMatchesWindow
+from user.makeRequestWindow import MakeRequestWindow
+from utils import apply_window_icon
+from db import get_user_by_id
 from db import log_audit_action
+
+#from user.trackDeliveryWindow import TrackDeliveryWindow
 
 class DashboardWindow(QDialog):
     def __init__(self, user_id=None, login_window=None):
@@ -28,10 +27,8 @@ class DashboardWindow(QDialog):
 
         self.addDonationButton.clicked.connect(self.openAddDonation)
         self.viewDonationsButton.clicked.connect(self.openViewDonations)
-        '''
-        self.trackDeliveryButton.clicked.connect(self.openTrackDelivery)
+        #self.trackDeliveryButton.clicked.connect(self.openTrackDelivery)
         self.makeRequestButton.clicked.connect(self.openMakeRequest)
-        '''
         self.viewRequestsButton.clicked.connect(self.openViewRequests)
         self.viewMatchesButton.clicked.connect(self.openViewMatches)
     
@@ -58,13 +55,15 @@ class DashboardWindow(QDialog):
     def openViewDonations(self):
         dialog = ViewDonationsWindow(self.user_id, self)
         dialog.exec()
-'''
-    def openTrackDelivery(self):
-        dialog = TrackDeliveryWindow(self.user_id, self)
-        dialog.exec()
-
+        
     def openMakeRequest(self):
         dialog = MakeRequestWindow(self.user_id, self)
         dialog.exec()
 '''
+    def openTrackDelivery(self):
+        dialog = TrackDeliveryWindow(self.user_id, self)
+        dialog.exec()
+'''
+    
+
     
