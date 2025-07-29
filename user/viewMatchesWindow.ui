@@ -48,9 +48,12 @@
      <height>250</height>
     </rect>
    </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">
-     font: 700 13pt "Open Sans";
+     font: 700 13pt &quot;Open Sans&quot;;
      background-color: rgb(255,255,255);
      border-radius: 16px;
      color: rgb(0,0,0);
@@ -66,10 +69,13 @@
      <height>38</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">
      border-radius: 19px;
-     font: 700 14pt "Open Sans";
+     font: 700 14pt &quot;Open Sans&quot;;
      background-color: red;
      color: rgb(255,255,255);
     </string>

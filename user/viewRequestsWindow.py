@@ -5,7 +5,7 @@ from PyQt6.uic import loadUi
 class ViewRequestsWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
-        loadUi("viewRequestsWindow.ui", self)
+        loadUi("user/viewRequestsWindow.ui", self)
         self.user_id = user_id
         self.closeButton.clicked.connect(self.close)
         self.setupTable()

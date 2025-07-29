@@ -29,9 +29,10 @@ class DashboardWindow(QDialog):
         '''
         self.trackDeliveryButton.clicked.connect(self.openTrackDelivery)
         self.makeRequestButton.clicked.connect(self.openMakeRequest)
+        '''
         self.viewRequestsButton.clicked.connect(self.openViewRequests)
         self.viewMatchesButton.clicked.connect(self.openViewMatches)
-        '''
+    
         self.logoutButton.clicked.connect(self.logout)
 
     def openAddDonation(self):
