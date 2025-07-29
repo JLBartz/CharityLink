@@ -6,7 +6,7 @@ import sqlite3
 class UpdateDeliveryWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        loadUi("updateDeliveryWindow.ui", self)
+        loadUi("admin/updateDeliveryWindow.ui", self)
         apply_window_icon(self)
         
         self.load_deliveries()

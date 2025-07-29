@@ -1,15 +1,17 @@
+from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QHeaderView
+import sqlite3
 
 class TrackDeliveryWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
-        loadUi("trackDeliveryWindow.ui", self)
+        loadUi("user/trackDeliveryWindow.ui", self)
         self.user_id = user_id
 
         # Resize columns
         header = self.deliveryTable.horizontalHeader()
         header.setStretchLastSection(True)
-        header.setSectionResizeMode(QHeaderView.Stretch)
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
         self.closeButton.clicked.connect(self.close)
         self.loadDeliveries()

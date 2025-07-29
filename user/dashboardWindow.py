@@ -5,11 +5,10 @@ from user.viewDonationsWindow import ViewDonationsWindow
 from user.viewRequestsWindow import ViewRequestsWindow
 from user.viewMatchesWindow import ViewMatchesWindow
 from user.makeRequestWindow import MakeRequestWindow
+from user.trackDeliveryWindow import TrackDeliveryWindow
 from utils import apply_window_icon
 from db import get_user_by_id
 from db import log_audit_action
-
-#from user.trackDeliveryWindow import TrackDeliveryWindow
 
 class DashboardWindow(QDialog):
     def __init__(self, user_id=None, login_window=None):
@@ -27,7 +26,7 @@ class DashboardWindow(QDialog):
 
         self.addDonationButton.clicked.connect(self.openAddDonation)
         self.viewDonationsButton.clicked.connect(self.openViewDonations)
-        #self.trackDeliveryButton.clicked.connect(self.openTrackDelivery)
+        self.trackDeliveryButton.clicked.connect(self.openTrackDelivery)
         self.makeRequestButton.clicked.connect(self.openMakeRequest)
         self.viewRequestsButton.clicked.connect(self.openViewRequests)
         self.viewMatchesButton.clicked.connect(self.openViewMatches)
@@ -37,7 +36,7 @@ class DashboardWindow(QDialog):
     def openAddDonation(self):
         dialog = AddDonationWindow(self.user_id, self)
         dialog.exec()
-    #Separate
+
     def openViewRequests(self):
         dialog = ViewRequestsWindow(self.user_id, self)
         dialog.exec()
@@ -59,11 +58,11 @@ class DashboardWindow(QDialog):
     def openMakeRequest(self):
         dialog = MakeRequestWindow(self.user_id, self)
         dialog.exec()
-'''
+
     def openTrackDelivery(self):
         dialog = TrackDeliveryWindow(self.user_id, self)
         dialog.exec()
-'''
+
     
 
     

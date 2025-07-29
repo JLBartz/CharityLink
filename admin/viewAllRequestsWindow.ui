@@ -58,10 +58,13 @@
      <height>40</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">
      border-radius: 20px;
-     font: 700 14pt "Open Sans";
+     font: 700 14pt &quot;Open Sans&quot;;
      background-color: red;
      color: rgb(255,255,255);
     </string>
