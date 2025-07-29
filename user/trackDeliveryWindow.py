@@ -1,5 +1,7 @@
 from PyQt6.uic import loadUi
-from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QHeaderView
+from PyQt6.QtWidgets import QDialog, QTableWidgetItem
+from PyQt6.uic import loadUi
+import sqlite3
 import sqlite3
 
 class TrackDeliveryWindow(QDialog):
@@ -7,19 +9,13 @@ class TrackDeliveryWindow(QDialog):
         super().__init__(parent)
         loadUi("user/trackDeliveryWindow.ui", self)
         self.user_id = user_id
-
-        # Resize columns
-        header = self.deliveryTable.horizontalHeader()
-        header.setStretchLastSection(True)
-        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
-
-        self.closeButton.clicked.connect(self.close)
         self.loadDeliveries()
 
     def loadDeliveries(self):
         conn = sqlite3.connect("CharityLink-Updated.db")
         cur = conn.cursor()
 
+        # Query deliveries for user as donor (of goods)
         cur.execute("""
             SELECT d.id, d.status, d.completed_time, m.match_type, di.name, gr.name
             FROM deliveries d
@@ -47,5 +43,5 @@ class TrackDeliveryWindow(QDialog):
 
         for row, delivery in enumerate(deliveries):
             for col, value in enumerate(delivery):
-                item = QTableWidgetItem(str(value) if value else "")
+                item = QTableWidgetItem(str(value) if value is not None else "")
                 self.deliveryTable.setItem(row, col, item)

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TrackDeliveryWindow</class>
- <widget class="QDialog" name="TrackDeliveryWindow">
+ <class>ReverseWindow</class>
+ <widget class="QDialog" name="ReverseWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>400</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Track Delivery</string>
+   <string>Reverse Donation/Match</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -22,7 +22,7 @@
      <x>30</x>
      <y>20</y>
      <width>740</width>
-     <height>50</height>
+     <height>40</height>
     </rect>
    </property>
    <property name="font">
@@ -36,46 +36,38 @@
     <string notr="true">color: rgb(0,0,0);</string>
    </property>
    <property name="text">
-    <string>Delivery Status</string>
+    <string>Reverse Donations/Matches</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="deliveryTable">
+  <widget class="QTableWidget" name="matchesTable">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>90</y>
+     <y>80</y>
      <width>740</width>
-     <height>230</height>
+     <height>320</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">
-      font: 700 14pt "Open Sans";
-      color: rgb(0, 0, 0);
-      background-color: rgb(255,255,255);
-      border-radius: 15px;
-    </string>
-   </property>
   </widget>
-  <widget class="QPushButton" name="closeButton">
+  <widget class="QPushButton" name="reverseButton">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>340</y>
-     <width>120</width>
+     <x>350</x>
+     <y>420</y>
+     <width>140</width>
      <height>40</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Close</string>
-   </property>
    <property name="styleSheet">
     <string notr="true">
-      border-radius: 20px;
-      font: 700 16pt "Open Sans";
-      background-color: red;
-      color: rgb(255,255,255);
+     border-radius: 20px;
+     font: 700 14pt "Open Sans";
+     background-color: rgb(150,0,0);
+     color: rgb(255,255,255);
     </string>
+   </property>
+   <property name="text">
+    <string>Reverse Selected</string>
    </property>
   </widget>
  </widget>
