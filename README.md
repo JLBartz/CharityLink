@@ -54,13 +54,11 @@ If not installed, download it here https://www.python.org/downloads/ and ensure 
 
 You should see the login window appear!
 
-🔐 Mock Login Details
-Use the following to log in:
+Admin login Details:
+email: charitylink@example.com
+password: charitylink123
 
-Email: donor@example.com
-Password: donor123
-
-📄 You can also check inputs.txt for the mock credentials.
+Use register window to create a user account.
 
 🧰 Developer Tools (Optional)
 <details> <summary>💡 Want to use Qt Designer?</summary>
