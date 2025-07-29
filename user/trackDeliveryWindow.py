@@ -10,6 +10,7 @@ class TrackDeliveryWindow(QDialog):
         loadUi("user/trackDeliveryWindow.ui", self)
         self.user_id = user_id
         self.loadDeliveries()
+        self.closeButton.clicked.connect(self.close)
 
     def loadDeliveries(self):
         conn = sqlite3.connect("CharityLink-Updated.db")
