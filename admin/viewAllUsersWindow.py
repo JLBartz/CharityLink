@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
 from PyQt6.uic import loadUi
+from utils import apply_window_icon
 import sqlite3
 import os
 
@@ -7,6 +8,7 @@ class ViewAllUsersWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("admin/viewAllUsersWindow.ui", self)
+        apply_window_icon(self)
 
         print("Opening DB from:", os.path.abspath("CharityLink-Updated.db"))
 

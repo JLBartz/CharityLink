@@ -2,6 +2,7 @@ from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog
 from user.addDonationWindow import AddDonationWindow
 from user.viewDonationsWindow import ViewDonationsWindow
+from utils import apply_window_icon
 from db import get_user_by_id
 '''
 from user.trackDeliveryWindow import TrackDeliveryWindow
@@ -15,6 +16,7 @@ class DashboardWindow(QDialog):
     def __init__(self, user_id=None, login_window=None):
         super().__init__()
         loadUi("user/dashboardWindow.ui", self)
+        apply_window_icon(self)
 
         self.user_id = user_id
         self.login_window = login_window

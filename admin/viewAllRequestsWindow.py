@@ -1,11 +1,14 @@
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem
 from PyQt6.uic import loadUi
+from utils import apply_window_icon
 import sqlite3
 
 class ViewAllRequestsWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("viewAllRequestsWindow.ui", self)
+        apply_window_icon(self)
+        
         self.load_requests()
 
     def load_requests(self):

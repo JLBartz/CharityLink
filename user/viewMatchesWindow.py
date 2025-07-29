@@ -1,6 +1,7 @@
 import sqlite3
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
 from PyQt6.uic import loadUi
+from utils import apply_window_icon
 import openrouteservice
 
 ORS_API_KEY = "your_api_key_here"  # Replace with your actual key
@@ -32,6 +33,8 @@ class ViewMatchesWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
         loadUi("user/viewMatchesWindow.ui", self)
+        apply_window_icon(self)
+        
         self.user_id = user_id
         self.closeButton.clicked.connect(self.close)
         self.setupTable()

@@ -1,11 +1,13 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
+from utils import apply_window_icon
 import db 
 
 class RegisterWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("user/registerWindow.ui", self)
+        apply_window_icon(self)
 
         self.registerButton.clicked.connect(self.handleRegister)
 

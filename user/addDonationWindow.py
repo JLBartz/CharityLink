@@ -1,11 +1,13 @@
 from PyQt6.uic import loadUi
 from PyQt6.QtWidgets import QDialog, QMessageBox
+from utils import apply_window_icon
 import sqlite3
 
 class AddDonationWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
         loadUi("user/addDonationWindow.ui", self)
+        apply_window_icon(self)
 
         self.user_id = user_id  # Pass logged-in user's ID
         self.submitButton.clicked.connect(self.submitDonation)

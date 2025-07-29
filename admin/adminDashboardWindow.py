@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QDialog
 from PyQt6.uic import loadUi
 from admin.viewAllUsersWindow import ViewAllUsersWindow
 from admin.auditLogWindow import AuditLogWindow
+from utils import apply_window_icon
 from db import log_audit_action
 
 '''
@@ -15,6 +16,7 @@ class AdminDashboardWindow(QDialog):
     def __init__(self, login_window=None, user_id=None):
         super().__init__(login_window)
         loadUi("admin/adminDashboardWindow.ui", self)
+        apply_window_icon(self)
 
         self.login_window = login_window
         self.user_id = user_id

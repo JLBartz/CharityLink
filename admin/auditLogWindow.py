@@ -1,6 +1,7 @@
 import sqlite3
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
 from PyQt6.uic import loadUi
+from utils import apply_window_icon
 
 DB_PATH = "CharityLink-Updated.db"
 
@@ -8,6 +9,8 @@ class AuditLogWindow(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("admin/auditLogWindow.ui", self)
+        apply_window_icon(self)
+        
         self.populate_log_table_from_db()
 
         self.closeButton.clicked.connect(self.closeWindow)

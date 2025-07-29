@@ -3,12 +3,14 @@ from PyQt6.QtWidgets import QDialog, QMessageBox
 from user.dashboardWindow import DashboardWindow
 from admin.adminDashboardWindow import AdminDashboardWindow
 from user.registerWindow import RegisterWindow
+from utils import apply_window_icon
 from db import validate_login, log_audit_action
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi("user/loginInputDialog.ui", self)
+        apply_window_icon(self)
 
         self.submitLoginButton.clicked.connect(self.checkLogin)
 

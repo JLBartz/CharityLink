@@ -1,11 +1,14 @@
 import sqlite3
 from PyQt6.QtWidgets import QDialog
 from PyQt6.uic import loadUi
+from utils import apply_window_icon
 
 class ViewDonationsWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
         loadUi("user/viewDonationsWindow.ui", self)
+        apply_window_icon(self)
+        
         self.user_id = user_id
         self.closeButton.clicked.connect(self.close)
         self.setupTable()

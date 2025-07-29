@@ -17,9 +17,10 @@
    <string>CharityLink</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);
+</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="charityLinkLabel">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -36,8 +37,8 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: transparent;</string>
    </property>
    <property name="text">
     <string>CharityLink</string>
@@ -87,6 +88,29 @@ color: rgb(0, 0, 0);
    </property>
    <property name="text">
     <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sloganLabel">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>470</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Open Sans SemiBold</family>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string>We connect because we care</string>
    </property>
   </widget>
  </widget>
