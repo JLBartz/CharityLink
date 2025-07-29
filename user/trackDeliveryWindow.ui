@@ -7,87 +7,75 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>420</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Track Delivery</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-    QDialog {
-     background-color: #f9f9f9;
-    }
-    QLabel#titleLabel {
-     color: #333;
-     font-size: 22pt;
-     font-weight: bold;
-    }
-    QTableWidget {
-     font: 600 12pt "Open Sans";
-     background-color: #ffffff;
-     border: 1px solid #ccc;
-     gridline-color: #ccc;
-     selection-background-color: #d0eaff;
-     alternate-background-color: #f2f2f2;
-    }
-    QPushButton#closeButton {
-     border-radius: 20px;
-     font: 700 14pt "Open Sans";
-     background-color: #e74c3c;
-     color: white;
-    }
-    QPushButton#closeButton:hover {
-     background-color: #c0392b;
-    }
-   </string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-
-  <!-- Title Label -->
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>30</x>
      <y>20</y>
-     <width>800</width>
-     <height>40</height>
+     <width>740</width>
+     <height>50</height>
     </rect>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+     <pointsize>22</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0,0,0);</string>
    </property>
    <property name="text">
     <string>Delivery Status</string>
    </property>
   </widget>
-
-  <!-- Table -->
   <widget class="QTableWidget" name="deliveryTable">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>80</y>
+     <y>90</y>
      <width>740</width>
-     <height>250</height>
+     <height>230</height>
     </rect>
    </property>
-   <property name="alternatingRowColors">
-    <bool>true</bool>
+   <property name="styleSheet">
+    <string notr="true">
+      font: 700 14pt "Open Sans";
+      color: rgb(0, 0, 0);
+      background-color: rgb(255,255,255);
+      border-radius: 15px;
+    </string>
    </property>
   </widget>
-
-  <!-- Close Button -->
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>350</y>
-     <width>130</width>
+     <x>650</x>
+     <y>340</y>
+     <width>120</width>
      <height>40</height>
     </rect>
    </property>
    <property name="text">
     <string>Close</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+      border-radius: 20px;
+      font: 700 16pt "Open Sans";
+      background-color: red;
+      color: rgb(255,255,255);
+    </string>
    </property>
   </widget>
  </widget>
