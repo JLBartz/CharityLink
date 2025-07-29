@@ -1,34 +1,34 @@
-import sqlite3
-from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
+from PyQt6.QtWidgets import QDialog, QTableWidgetItem
 from PyQt6.uic import loadUi
 from utils import apply_window_icon
-import openrouteservice
+import sqlite3
+import time
 
-ORS_API_KEY = "your_api_key_here"  # Replace with your actual key
-client = openrouteservice.Client(key=ORS_API_KEY)
+# --- Safe geocoding setup with Nominatim ---
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+
+geolocator = Nominatim(user_agent="charitylink-app")
 
 def get_coordinates(address):
     try:
-        geocode = client.pelias_search(text=address)
-        coords = geocode['features'][0]['geometry']['coordinates']
-        return coords  # [longitude, latitude]
+        time.sleep(1)  # Respect Nominatim's usage policy
+        location = geolocator.geocode(address)
+        if location:
+            return (location.latitude, location.longitude)
+        return None
     except Exception as e:
         print(f"Geocoding error for '{address}': {e}")
         return None
 
 def calculate_distance(start_coords, end_coords):
     try:
-        result = client.directions(
-            coordinates=[start_coords, end_coords],
-            profile='driving-car',
-            format='geojson'
-        )
-        distance_meters = result['features'][0]['properties']['segments'][0]['distance']
-        return distance_meters / 1000  # in kilometers
+        return geodesic(start_coords, end_coords).km
     except Exception as e:
-        print(f"Routing error: {e}")
+        print(f"Distance calculation error: {e}")
         return None
 
+# --- Main Window Class ---
 class ViewMatchesWindow(QDialog):
     def __init__(self, user_id, parent=None):
         super().__init__(parent)
@@ -65,12 +65,13 @@ class ViewMatchesWindow(QDialog):
         for row_idx, row in enumerate(results):
             match_id, match_type, donation_name, request_name, donor_location, recipient_location, status, matched_at = row
             distance = "N/A"
+
             start_coords = get_coordinates(donor_location)
             end_coords = get_coordinates(recipient_location)
 
             if start_coords and end_coords:
                 dist = calculate_distance(start_coords, end_coords)
-                if dist:
+                if dist is not None:
                     distance = f"{dist:.2f} km"
 
             values = [match_id, match_type, f"{donation_name} ↔ {request_name}", status, matched_at, distance]
