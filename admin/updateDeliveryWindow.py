@@ -24,10 +24,17 @@ class UpdateDeliveryWindow(QDialog):
         conn.close()
 
         self.deliveriesTable.setRowCount(0)
+        self.deliveriesTable.setColumnCount(4)
+        self.deliveriesTable.setHorizontalHeaderLabels([
+            "Delivery ID", "Status", "Completed Time", "Match Type"
+        ])
+
         for row_num, row_data in enumerate(deliveries):
             self.deliveriesTable.insertRow(row_num)
             for col, data in enumerate(row_data):
-                self.deliveriesTable.setItem(row_num, col, QTableWidgetItem(str(data)))
+                item = QTableWidgetItem(str(data) if data is not None else "")
+                self.deliveriesTable.setItem(row_num, col, item)
+
 
     def update_selected(self):
         selected = self.deliveriesTable.currentRow()

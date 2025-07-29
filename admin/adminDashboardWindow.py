@@ -4,13 +4,11 @@ from admin.viewAllUsersWindow import ViewAllUsersWindow
 from admin.auditLogWindow import AuditLogWindow
 from admin.viewAllRequestsWindow import ViewAllRequestsWindow
 from admin.updateDeliveryWindow import UpdateDeliveryWindow
+from admin.viewAllDonationsWindow import ViewAllDonationsWindow
+from admin.reverseWindow import ReverseWindow
 from utils import apply_window_icon
 from db import log_audit_action
 
-'''
-from admin.viewAllDonationsWindow import ViewAllDonationsWindow
-from admin.reverseWindow import ReverseWindow
-'''
 
 class AdminDashboardWindow(QDialog):
     def __init__(self, login_window=None, user_id=None):
@@ -26,6 +24,8 @@ class AdminDashboardWindow(QDialog):
         self.viewRequestsButton.clicked.connect(self.openViewRequests)
         self.viewAuditLogsButton.clicked.connect(self.openAuditLogs)
         self.updateDeliveryButton.clicked.connect(self.openUpdateDelivery)
+        self.viewDonationsButton.clicked.connect(self.openViewDonations)
+        self.reverseButton.clicked.connect(self.openReverse)
         
         self.logoutButton.clicked.connect(self.logout)  
 
@@ -52,19 +52,14 @@ class AdminDashboardWindow(QDialog):
         dialog = UpdateDeliveryWindow(self)
         dialog.exec()
 
-    '''
-        self.viewDonationsButton.clicked.connect(self.openViewDonations)
-        self.reverseButton.clicked.connect(self.openReverse)
-    
-    
- def openViewDonations(self):
-        dialog = ViewAllDonationsWindow(self)
+    def openViewDonations(self):
+        dialog = ViewAllDonationsWindow(self.user_id, self)
         dialog.exec()
 
     def openReverse(self):
         dialog = ReverseWindow(self)
         dialog.exec()
-    '''
+
    
 
     
